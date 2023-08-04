@@ -1,8 +1,13 @@
 package com.yoinerduran.juegossena;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+
+import com.yoinerduran.juegossena.fragmentos.MenuFragment;
+import com.yoinerduran.juegossena.funciones.Funciones;
 
 public class MainActivity extends AppCompatActivity {
 

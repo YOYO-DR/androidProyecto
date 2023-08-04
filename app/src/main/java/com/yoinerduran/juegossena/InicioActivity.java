@@ -6,6 +6,9 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
+import com.yoinerduran.juegossena.fragmentos.InicioSesionFragment;
+import com.yoinerduran.juegossena.funciones.Funciones;
+
 public class InicioActivity extends AppCompatActivity {
 
     @Override
