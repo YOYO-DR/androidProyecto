@@ -16,8 +16,8 @@
 
         <ImageButton
             android:id="@+id/btnInicio"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:scaleType="fitCenter"
             android:src="@drawable/icon_home"
             android:contentDescription="Volver a inicio"/>
@@ -25,8 +25,8 @@
 
         <ImageButton
             android:id="@+id/btnSalirSesion"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:scaleType="fitCenter"
             android:layout_marginStart="150dp"
             android:contentDescription="Salir de sesión"

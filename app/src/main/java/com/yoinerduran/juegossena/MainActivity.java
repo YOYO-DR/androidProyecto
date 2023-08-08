@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //crear y cargar fragmento del menu, y el fragmento de inicio de sesión
-        //menu
+        //crear y cargar fragmento del menu
         Fragment fragMenu=new MenuFragment();
         FragmentManager fragMenuManager=getSupportFragmentManager();
         Funciones.crearFrag(fragMenuManager,fragMenu,R.id.containerMenu);
+
     }
 }
