@@ -34,8 +34,6 @@ public class MenuFragment extends Fragment {
 
         View vista=inflater.inflate(R.layout.fragment_menu, container, false);
         session=getActivity().getSharedPreferences("session",getContext().MODE_PRIVATE);
-        //verificar session
-        boolean vali=Funciones.verificarSessionTrueFalse(getContext(),session.getString("session_id",""));
 
         btnInicio=vista.findViewById(R.id.btnInicio);
         btnSalirSesion=vista.findViewById(R.id.btnSalirSesion);
