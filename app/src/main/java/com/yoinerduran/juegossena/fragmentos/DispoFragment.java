@@ -47,10 +47,10 @@ public class DispoFragment extends Fragment {
         Funciones.enviarPeticionPost(getContext(), ApiDjango.urlDatosDispo(getContext()),parametros,(statusCode, respuesta) -> {
             JSONObject res= new JSONObject(respuesta);
             Log.e("dispo",respuesta);
-            tvTitulo.setText("Dispositivos");
+            tvTitulo.setText("Dispositivos #");
         }, (statusCode, error) -> {
             Toast.makeText(getContext(), ""+error.toString(), Toast.LENGTH_SHORT).show();
-            tvTitulo.setText("Dispositivos");
+            tvTitulo.setText("Dispositivos #");
         });
         return vista;
     }
