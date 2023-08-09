@@ -23,6 +23,7 @@ import org.json.JSONObject;
 
 public class MenuFragment extends Fragment {
     ImageButton btnInicio,btnSalirSesion;
+    SharedPreferences session;
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -30,8 +31,12 @@ public class MenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //
+
         View vista=inflater.inflate(R.layout.fragment_menu, container, false);
+        session=getActivity().getSharedPreferences("session",getContext().MODE_PRIVATE);
+        //verificar session
+        boolean vali=Funciones.verificarSessionTrueFalse(getContext(),session.getString("session_id",""));
+
         btnInicio=vista.findViewById(R.id.btnInicio);
         btnSalirSesion=vista.findViewById(R.id.btnSalirSesion);
         btnInicio.setOnClickListener(new View.OnClickListener() {

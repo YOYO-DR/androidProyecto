@@ -35,6 +35,7 @@ public class DispoFragment extends Fragment {
         View vista=inflater.inflate(R.layout.fragment_dispo, container, false);
         //obtengo la session
         session=getActivity().getSharedPreferences("session",getContext().MODE_PRIVATE);
+        //verficar sesion
         tvTitulo=vista.findViewById(R.id.tvTitulo);
         rvDispo=vista.findViewById(R.id.rvDispo);
         rvDispo.setLayoutManager(new LinearLayoutManager(getContext()));

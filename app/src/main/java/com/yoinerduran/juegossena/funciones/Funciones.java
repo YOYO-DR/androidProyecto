@@ -21,6 +21,7 @@ import com.yoinerduran.juegossena.api.ApiDjango;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -127,5 +128,28 @@ public class Funciones {
         }
         char firstChar = input.charAt(0);
         return Character.toUpperCase(firstChar) + input.substring(1);
+    }
+    public static boolean verificarSessionTrueFalse(Context context,String session_id) {
+        AtomicBoolean validacion= new AtomicBoolean(false);
+        RequestParams parametros = new RequestParams();
+        parametros.put("action","verificariniciarsesion");
+        parametros.put("session_id",session_id);
+
+        enviarPeticionPost(context,ApiDjango.urlInicioSesion(context),parametros,(statusCode, respuesta) -> {
+            JSONObject res=new JSONObject(respuesta);
+            try {
+                String vali=res.getString("validacion");
+                if (vali.equals("true")){
+                    validacion.set(true);
+                }else{
+                    validacion.set(false);
+                }
+            }catch (JSONException e){
+                Toast.makeText(context, ""+e.toString(), Toast.LENGTH_SHORT).show();
+            }
+        },(statusCode, error) -> {
+            Toast.makeText(context, ""+error.toString(), Toast.LENGTH_SHORT).show();
+        });
+        return validacion.get();
     }
 }
