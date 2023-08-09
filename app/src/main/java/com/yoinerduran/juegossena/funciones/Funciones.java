@@ -121,4 +121,11 @@ public class Funciones {
         // Verifica si el correo coincide con el patrón
         return matcher.matches();
     }
+    public static String toTitle(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        char firstChar = input.charAt(0);
+        return Character.toUpperCase(firstChar) + input.substring(1);
+    }
 }
